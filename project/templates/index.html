@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CPU_and_MEM_Monitor</title>
+ <!--    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/socket.io/1.5.1/socket.io.min.js"></script>
+    <script src="http://echarts.baidu.com/dist/echarts.min.js"></script> -->
+    <script src="https://cdn.socket.io/socket.io-1.0.6.js"></script>
+
+
+</head>
+
+<body>
+    <!--为ECharts准备一个具备大小（宽高）的Dom-->
+ 
+    <script>
+
+
+    
+    // 建立socket连接，等待服务器“推送”数据，用回调函数更新图表
+    $(document).ready(function() {
+        namespace = '/test';
+        var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
+        
+        socket.on('server_response', function(res) {
+            document.write(res);
+        });
+
+    });
+    
+    </script>
+</body>
+</html>

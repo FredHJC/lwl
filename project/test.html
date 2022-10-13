@@ -1,0 +1,35 @@
+<html>
+<head>
+	{% if 0 == stop %}
+	<meta http-equiv="refresh" content="2;url={{ url_for('test') }}">
+	    {% endif %}
+	</head>
+	<body>
+
+	<div class="header">
+		<h4>标题XXX</h4>
+	</div>
+	<div class="body">
+		<form class="form" action="/test" method="post">
+			<div class="form">
+				<button class="btn btn-primary" type="submit" >开始</button>
+		</div>
+		</form>
+	</div>
+
+	<div class="c" id="show2" >
+	    <div class="header">
+        <h4>结果展示：</h4>
+       <p style="white-space:pre-line;">{{ s }}</p>
+   </div>
+
+</div>
+</body>
+<!- 根据自己实际路径填写>
+<script type="text/javascript" src="static/js/main.min.js"></script>
+<script type="text/javascript" src="static/js/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+</script>
+</html>
